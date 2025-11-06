@@ -11,8 +11,12 @@
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
   font-family: var(--main-font);
-  font-variation-settings: "wght" 410;
+  font-variation-settings: "wght" var(--font-weight-text);
+  font-size: 18px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   background-image: repeating-linear-gradient(
@@ -25,6 +29,12 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-block: 100px;
+}
+
+.container {
+  inline-size: clamp(375px, calc(200px + 30.5vw), 700px);
+  margin-inline: auto;
 }
 
 .header {
@@ -32,11 +42,14 @@
   font-weight: 400;
   text-transform: uppercase;
   color: #000;
-  margin: 100px auto;
-  inline-size: clamp(375px, calc(200px + 30.5vw), 700px);
   border: 2px solid #000;
   background-color: #fff;
-  padding: clamp(122px, calc(119.2px + 0.75vw), 130px) clamp(16px, calc(16px + (122.5 - 16) * ((100vw - 375px) / (1440 - 375))), 122.5px);
+  padding: clamp(122px, calc(119.2px + 0.75vw), 130px)
+    clamp(
+      16px,
+      calc(16px + (122.5 - 16) * ((100vw - 375px) / (1440 - 375))),
+      122.5px
+    );
 }
 
 .header-wrapper {
@@ -54,11 +67,6 @@
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
-.content {
-  inline-size: clamp(375px, calc(200px + 30.5vw), 700px);
-  margin-inline: auto;
-}
-
 .cards__list {
   display: flex;
   flex-direction: column;
@@ -70,8 +78,162 @@
   background-color: #fff;
 }
 
-.card-image {
+.cards__list-item-title {
+  padding: 4px 10px;
+  font-variation-settings: "wght" var(--font-weight-title);
+  font-size: 18px;
+}
+
+.cards__list-item-image-wrapper {
+  position: relative;
+  border-block-start: 2px solid #000;
+  border-block-end: 2px solid #000;
+}
+
+.cards__list-item-image {
+  position: relative;
+  z-index: 0;
   inline-size: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
+  aspect-ratio: 1 / 1;
+}
+
+.scared {
+  filter: contrast(1.5);
+}
+
+.puppy {
+  filter: saturate(1.2);
+}
+
+.wtf {
+  filter: brightness(0.5);
+}
+
+.chase {
+  filter: grayscale(1);
+}
+
+.colleagues {
+  filter: brightness(0.8) blur(2px);
+}
+
+.tasks {
+  filter: invert(1);
+}
+
+.melancholy {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+.hope {
+  filter: brightness(0.9) contrast(1.2) saturate(1.5) hue-rotate(25deg);
+}
+
+.cards__list-item-image-label {
+  position: absolute;
+  z-index: 1;
+  inset-block-start: 25px;
+  inset-inline-end: 25px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow: -1px 0 var(--text-stroke-color), 0 1px var(--text-stroke-color),
+    1px 0 var(--text-stroke-color), 0 -1px var(--text-stroke-color);
+}
+
+@supports (
+  (text-stroke: 1px var(--text-stroke-color)) or
+    (-webkit-text-stroke: 1px var(--text-stroke-color))
+) {
+  .cards__list-item-image-label {
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+    text-stroke: 1px var(--text-stroke-color);
+    text-shadow: none;
+  }
+}
+
+.cards__list-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px;
+}
+
+.cards__list-item-content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.cards__list-item-content-buttons {
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.card__like-button {
+  padding: 9px 17px;
+  outline: 2px solid #000;
+  min-inline-size: 130px;
+  min-block-size: 38px;
+}
+
+.button__text {
+  display: block;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 0.9;
+}
+
+.main-body {
+  fill: transparent;
+}
+
+.core {
+  fill: transparent;
+}
+
+.contour {
+  fill: var(--fill-color-contour);
+}
+
+.sparks {
+  fill: var(--fill-color-sparks);
+  opacity: 0;
+}
+
+.floppy {
+  max-inline-size: 28px;
+}
+
+.save-it-button {
+  margin-block-start: 50px;
+  margin-inline: auto;
+  padding: 17px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  outline: 2px solid #000;
+}
+
+@media (width > 375px) {
+  .floppy {
+    max-inline-size: 21px;
+  }
+
+  .save-it-button {
+    flex-direction: row;
+    min-inline-size: 355px;
+  }
 }

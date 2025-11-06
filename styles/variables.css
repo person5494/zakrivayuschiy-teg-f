@@ -3,6 +3,10 @@
   --accent-font: PressStart2P, monospace;
   --font-weight-text: 410;
   --font-weight-title: 715;
+  --fill-color-contour: #000;
+  --animation-fill-color: #FF0000;
+  --fill-color-sparks: #FF0000;
+  --text-stroke-color: #fff;
   
   /* --accent-color: #FF0070;
   --main-bg-color: #000028;
