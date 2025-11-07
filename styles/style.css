@@ -19,11 +19,8 @@
   font-size: 18px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  background-image: repeating-linear-gradient(
-      #d3d3d3,
-      #d3d3d3 2px,
-      transparent 4px
-    ),
+  background-image:
+    repeating-linear-gradient(#d3d3d3, #d3d3d3 2px, transparent 4px),
     repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 2px, transparent 4px),
     linear-gradient(#e7e7e7, #e7e7e7 0.01%, #1a1a1a);
   background-attachment: fixed;
@@ -142,14 +139,18 @@
   text-transform: uppercase;
   mix-blend-mode: hard-light;
   opacity: 0.5;
-  text-shadow: -1px 0 var(--text-stroke-color), 0 1px var(--text-stroke-color),
-    1px 0 var(--text-stroke-color), 0 -1px var(--text-stroke-color);
+  text-shadow:
+    -1px 0 var(--text-stroke-color),
+    0 1px var(--text-stroke-color),
+    1px 0 var(--text-stroke-color),
+    0 -1px var(--text-stroke-color);
 }
 
 @supports (
   (text-stroke: 1px var(--text-stroke-color)) or
     (-webkit-text-stroke: 1px var(--text-stroke-color))
 ) {
+
   .cards__list-item-image-label {
     -webkit-text-stroke: 1px var(--text-stroke-color);
     text-stroke: 1px var(--text-stroke-color);
@@ -236,7 +237,7 @@
 }
 
 .card__icon-button {
-  outline: 2px solid rgba(0, 0, 0, 0);
+  outline: 2px solid rgb(0 0 0 / 0);
   transition: outline-color 0.3s ease;
 }
 
@@ -245,7 +246,7 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: 2px solid rgba(0, 0, 0, 1);
+  outline: 2px solid rgb(0 0 0 / 1);
 }
 
 .main-body {
@@ -395,6 +396,7 @@
 }
 
 @media (width > 375px) {
+
   .floppy {
     max-inline-size: 21px;
   }

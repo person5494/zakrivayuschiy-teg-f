@@ -1,10 +1,10 @@
 :root {
-  --main-font: Inter-Variable, sans-serif;
-  --accent-font: PressStart2P, monospace;
+  --main-font: inter-variable, sans-serif;
+  --accent-font: pressstart2p, monospace;
   --font-weight-text: 410;
   --font-weight-title: 715;
   --fill-color-contour: #000;
-  --animation-fill-color: #FF0000;
+  --animation-fill-color: #f00;
   --fill-color-core: #fff;
   --text-stroke-color: #fff;
   --border: 2px solid #000;
