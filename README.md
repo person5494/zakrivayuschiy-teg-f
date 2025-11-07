@@ -1,1 +1,1 @@
-https://person5494.github.io/zakrivayuschiy-teg-f/
+https://github.com/person5494/zakrivayuschiy-teg-f
