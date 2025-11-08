@@ -39,7 +39,7 @@
 }
 
 .container {
-  inline-size: clamp(375px, calc(200px + 30.5vw), 700px);
+  inline-size: clamp(375px, calc(375px + 325 * ((100vw - 375px) / 1065)), 700px);
   margin-inline: auto;
 }
 
