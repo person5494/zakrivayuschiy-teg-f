@@ -10,7 +10,7 @@
 
 */
 
-@keyframes heart-scale {
+@keyframes scaleUp {
 
   from {
     transform: scale(1);
@@ -21,7 +21,7 @@
   }
 }
 
-@keyframes sparks {
+@keyframes fadeIn {
 
   0% {
     opacity: 0;
