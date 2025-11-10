@@ -330,12 +330,7 @@
 }
 
 .dialog {
-  position: fixed;
   border: none;
-  margin: 0;
-  inset-block-start: 50%;
-  inset-inline-start: 50%;
-  transform: translate(-50%, -50%);
   max-width: none;
   inline-size: clamp(
     341px,
@@ -392,6 +387,7 @@
 
   .floppy-save-it-button {
     max-inline-size: 21px;
+    object-fit: cover;
   }
 
   .save-it-button {
