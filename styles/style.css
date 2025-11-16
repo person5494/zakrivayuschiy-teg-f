@@ -54,7 +54,7 @@
   color: #000;
   border: var(--border, 2px solid #000);
   background-color: #fff;
-  padding-block: clamp(122px, calc(119.2px + 0.75vw), 130px);
+  padding-block: clamp(122px, calc(122px + (8 * (100vw - 375px) / 1065)), 130px);
   margin-block-end: 100px;
 }
 
@@ -195,6 +195,8 @@
   outline: var(--border, 2px solid #000);
   color: var(--button-color, #fff);
   background-color: var(--button-color, #fff);
+  filter: drop-shadow(0 0 0 #000);
+  transition: filter 0.3s ease;
 }
 
 .button-with-text::before {
@@ -205,19 +207,17 @@
   inline-size: 100%;
   block-size: 100%;
   background-color: #000;
-  transform-origin: left;
-  transform: scaleX(0);
+  transform-origin: left top;
+  transform: scale(0,0);
   transition: transform 0.5s ease-in-out;
 }
 
 .button-with-text:focus-visible {
   filter: drop-shadow(2px 2px 0 #000);
-  /* box-shadow: 2px 2px 0 0 #000; - это свойство отображается некорректно в сравнении с макетом */
-  transition: box-shadow 0.3s ease;
 }
 
 .button-with-text:hover::before {
-  transform: scaleX(1);
+  transform: scale(1,1);
 }
 
 .card__like-button {
